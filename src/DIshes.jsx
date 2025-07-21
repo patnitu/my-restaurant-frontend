@@ -5,7 +5,7 @@ const Dishes = () => {
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/dishes')
+    fetch(`${import.meta.env.VITE_API_URL}/dishes`)
       .then(res => res.json())
       .then(data => setDishes(data))
       .catch(err => console.error(err));
